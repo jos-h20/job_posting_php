@@ -42,6 +42,22 @@
             return $this->contact_info;
         }
 
+        function save()
+        {
+            array_push($_SESSION['available_jobs'], $this);
+        }
+
+
+        static function getAll()
+        {
+            return $_SESSION['available_jobs'];
+        }
+
+        static function deleteAll()
+        {
+            $_SESSION['available_jobs'] = array();
+        }
+
 
     }
 
